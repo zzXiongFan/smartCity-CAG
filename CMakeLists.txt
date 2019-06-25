@@ -26,18 +26,12 @@ set( DBoW3_LIBS "/usr/local/lib/libDBoW3.a" )
 
 # 添加源文件路径
 include_directories(src)
+include_directories(include())
 
-# set(SIFT_HEADERS
-#         src/sift/ASifttDetector.cpp
-#         src/sift/ASifttDetector.h)
 
-# # 系统插件
-# set(UTILS_SRC_FILES
-#         src/utils.cpp
-#         src/utils.h)
-
-# 重命名库
-# add_library(demo ${UTILS_SRC_FILES} )
+# 生成插件库
+add_library(utils src/utils/utils.cpp)
+add_library(asift src/sift/ASifttDetector.cpp)
 
 
 # 将库链入include
@@ -48,3 +42,7 @@ include_directories(
 # 生成对一个的可执行文件
 add_executable( photoLocation src/photoLocation.cpp  )
 target_link_libraries( photoLocation ${OpenCV_LIBS} ${DBoW3_LIBS})
+
+# 生成对应的demo
+add_executable(Asift_demo src/sift/asift_main.cpp)
+target_link_libraries(Asift_demo utils asift ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${OpenCV_LIBS} )
