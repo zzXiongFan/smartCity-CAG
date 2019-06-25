@@ -15,3 +15,8 @@
   camke ..
   make
   ```
+
+3. 运行
+  ```
+  ./build/bin photoLocation [picturePath]
+  ```
