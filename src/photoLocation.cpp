@@ -14,6 +14,10 @@
 // DBOW
 #include "DBoW3/DBoW3.h"
 
+// ASIFT相关
+#include "ASifttDetector.h"
+#include "utils.h"
+
 
 using namespace std;
 using namespace cv;

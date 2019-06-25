@@ -41,8 +41,8 @@ include_directories(
 
 # 生成对一个的可执行文件
 add_executable( photoLocation src/photoLocation.cpp  )
-target_link_libraries( photoLocation ${OpenCV_LIBS} ${DBoW3_LIBS})
+target_link_libraries( photoLocation utils asift ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${OpenCV_LIBS} ${OpenCV_LIBS} ${DBoW3_LIBS})
 
 # 生成对应的demo
-add_executable(Asift_demo src/sift/asift_main.cpp)
+add_executable(Asift_demo src/sift/asift_demo.cpp)
 target_link_libraries(Asift_demo utils asift ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${OpenCV_LIBS} )

@@ -2,7 +2,7 @@
 
   CAG研究生一年级比赛项目智慧城市相关代码设计
 
-# 启动项目
+## 启动项目
 
 1. 安装opencv3及其拓展组件，DBoW3库
   
@@ -20,3 +20,7 @@
   ```
   ./build/bin photoLocation [picturePath]
   ```
+
+## ASIFT的使用
+
+参考src/sift 中asift_demo.cpp
